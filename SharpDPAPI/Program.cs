@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Diagnostics;
 
 namespace SharpDPAPI
 {
@@ -124,6 +125,9 @@ namespace SharpDPAPI
             {
                 Console.WriteLine("\r\n[!] Unhandled SharpDPAPI exception:\r\n");
                 Console.WriteLine(e);
+            } finally
+            {
+                Process.GetCurrentProcess().Kill();
             }
         }
     }

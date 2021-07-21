@@ -133,6 +133,10 @@ namespace SharpChrome
                 Console.WriteLine("\r\n[!] Unhandled SharpChrome exception:\r\n");
                 Console.WriteLine(e);
             }
+            finally
+            {
+                Process.GetCurrentProcess().Kill();
+            }
         }
     }
 }
